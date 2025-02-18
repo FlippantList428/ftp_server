@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FTP Server</title>
+</head>
+<body>
+    <h1>FTP Server</h1>
+    <div class="upload-container">
+        <h2>Prześlij plik</h2>
+        <input type="file" id="fileInput" multiple>
+        <button id="uploadBtn">Prześlij</button>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <p id="uploadStatus"></p>
+    </div>
+
+    <div class="download-container">
+        <h2>Dostępne pliki</h2>
+        <ul id="fileList"></ul>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
