@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+}
+
+.upload-container, .download-container {
+    background-color: #1e1e1e;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #ff5252;
+}
+
+input[type="file"] {
+    margin: 10px 0;
+    color: #e0e0e0;
+    background-color: #333;
+    border: 1px solid #ff5252;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #e53935;
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #333;
+    border-radius: 8px;
+    margin-top: 10px;
+    height: 24px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #ff5252;
+    border-radius: 8px;
+}
+
+#fileList {
+    list-style: none;
+    padding: 0;
+}
+
+#fileList li {
+    background-color: #333;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#fileList li button {
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+#fileList li button:hover {
+    background-color: #e53935;
+}
+
+#uploadStatus {
+    color: #ff5252;
+}
