@@ -1,7 +1,7 @@
 document.getElementById('uploadBtn').addEventListener('click', function () {
     const files = document.getElementById('fileInput').files;
     if (files.length === 0) {
-        alert('Wybierz plik do przesłania.');
+        showPopup('Wybierz plik do przesłania.');
         return;
     }
 
@@ -22,9 +22,11 @@ document.getElementById('uploadBtn').addEventListener('click', function () {
     xhr.onload = function () {
         if (xhr.status === 200) {
             document.getElementById('uploadStatus').textContent = 'Przesyłanie zakończone!';
+            showPopup('Przesyłanie zakończone!');
             fetchFileList();
         } else {
             document.getElementById('uploadStatus').textContent = 'Błąd podczas przesyłania.';
+            showPopup('Błąd podczas przesyłania.');
         }
     };
 
@@ -57,6 +59,35 @@ function fetchFileList() {
         }
     };
     xhr.send();
+}
+
+// Dark/Light mode toggle
+const modeToggle = document.getElementById('modeToggle');
+const popup = document.getElementById('popup');
+
+function setMode(mode) {
+    document.body.classList.toggle('light-mode', mode === 'light');
+    modeToggle.classList.toggle('light-mode', mode === 'light');
+    modeToggle.textContent = mode === 'light' ? '🌞 Tryb jasny' : '🌙 Tryb ciemny';
+    localStorage.setItem('siteMode', mode);
+}
+
+modeToggle.addEventListener('click', () => {
+    const isLight = document.body.classList.contains('light-mode');
+    setMode(isLight ? 'dark' : 'light');
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    const savedMode = localStorage.getItem('siteMode') || 'dark';
+    setMode(savedMode);
+});
+
+function showPopup(message) {
+    popup.textContent = message;
+    popup.classList.add('show');
+    setTimeout(() => {
+        popup.classList.remove('show');
+    }, 2500);
 }
 
 // Pobranie listy plików przy załadowaniu strony

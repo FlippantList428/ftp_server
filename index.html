@@ -7,11 +7,13 @@
     <title>FTP Server</title>
 </head>
 <body>
-    <h1>FTP Server</h1>
+    <button id="modeToggle" title="Przełącz tryb jasny/ciemny">🌙 Tryb ciemny</button>
+    <h1><span style="vertical-align: middle; color: #ff5252;">📁</span> FTP Server</h1>
     <div class="upload-container">
-        <h2>Prześlij plik</h2>
-        <input type="file" id="fileInput" multiple>
-        <button id="uploadBtn">Prześlij</button>
+        <h2><span title="Prześlij plik" style="vertical-align: middle;">⬆️</span> Prześlij plik</h2>
+        <div id="dropArea" class="drop-area" title="Przeciągnij i upuść pliki tutaj lub kliknij, aby wybrać">Przeciągnij pliki tutaj lub kliknij, aby wybrać</div>
+        <input type="file" id="fileInput" multiple style="display:none;">
+        <button id="uploadBtn" title="Wyślij wybrane pliki">Prześlij</button>
         <div class="progress-container">
             <div class="progress-bar" id="progressBar"></div>
         </div>
@@ -19,10 +21,12 @@
     </div>
 
     <div class="download-container">
-        <h2>Dostępne pliki</h2>
+        <h2><span title="Dostępne pliki" style="vertical-align: middle;">⬇️</span> Dostępne pliki</h2>
         <ul id="fileList"></ul>
     </div>
 
+    <div id="popup" class="popup"></div>
+    <div id="tooltip" class="tooltip" style="display:none;"></div>
     <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
